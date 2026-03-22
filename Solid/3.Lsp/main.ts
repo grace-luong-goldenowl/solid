@@ -1,46 +1,7 @@
-/**
- * *****************************************
- * 📝 UNCOMMENT THE PRACTICE SECTION CODE YOU WANT BELOW AND START YOUR SOLUTION
- * *****************************************
- *
- * The following lines are currently commented out.
- * Uncomment them to start implementing your solution.
- * Happy coding! 🚀
- */
-
-class PaymentProcessor {
-  processPayment(amount: number): void {
-    console.log(`Processing payment of $${amount}`);
-  }
-}
-
-class OnlinePayment extends PaymentProcessor {
-  processPayment(amount: number): void {
-    console.log("Connecting to payment service...");
-  }
-}
-
-class CreditCardPayment extends OnlinePayment {
-  processPayment(amount: number): void {
-    console.log(`Processing credit card payment of $${amount}`);
-    console.log("Validating credit card details...");
-    console.log("Charging the credit card...");
-  }
-}
-
-class PayPalPayment extends OnlinePayment {
-  processPayment(amount: number): void {
-    console.log(`Processing PayPal payment of $${amount}`);
-    console.log("Redirecting to PayPal...");
-    console.log("Completing PayPal transaction...");
-  }
-}
-class CashPayment extends PaymentProcessor {
-  processPayment(amount: number): void {
-    console.log(`Processing cash payment of $${amount}`);
-    console.log("Received from customer");
-  }
-}
+import { PaymentProcessor } from './payments/PaymentProcessor';
+import { CreditCardPayment } from './payments/CreditCardPayment';
+import { PayPalPayment } from './payments/PayPalPayment';
+import { CashPayment } from './payments/CashPayment';
 
 function handlePayment(
   paymentProcessor: PaymentProcessor,
